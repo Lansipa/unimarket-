@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # UNiMarket
 
 Marketplace para estudiantes de la Universidad Nacional (sede Medellín). Proyecto final Jóvenes creaTIvos 2026.
@@ -36,3 +37,7 @@ GitHub Pages solo muestra páginas estáticas, así que va por partes:
 3. **Frontend** en GitHub Pages: Settings → Pages → rama `main`, carpeta `/frontend` (si solo permite `/root` o `/docs`, renombra `frontend` a `docs`).
 
 Importante: en el plan gratuito de Render los archivos se reinician al redeployar; los datos de ejemplo vuelven a `data/`.
+=======
+# unimarket-
+Final project JC
+>>>>>>> 27fc5064822ec4c5ec8b91513ee00d44335ad167
