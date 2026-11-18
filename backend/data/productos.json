@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "nombre": "Brownies caseros",
+    "tipo": "venta",
+    "categoria": "Snacks",
+    "precio": 3500,
+    "descripcion": "Brownies artesanales recién hechos, con nueces.",
+    "puntoEntrega": "Cafetería",
+    "vendedor": "Laura Sierra",
+    "contacto": "lsierra@unal.edu.co",
+    "estado": "aprobado",
+    "fecha": "2026-11-01T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "nombre": "Cálculo de Stewart, 7ma edición",
+    "tipo": "venta",
+    "categoria": "Libros",
+    "precio": 25000,
+    "descripcion": "En muy buen estado, con pocas anotaciones a lápiz.",
+    "puntoEntrega": "Biblioteca",
+    "vendedor": "Daniel Ruiz",
+    "contacto": "druiz@unal.edu.co",
+    "estado": "aprobado",
+    "fecha": "2026-11-02T10:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "nombre": "Cambio calculadora científica por libro de física",
+    "tipo": "intercambio",
+    "categoria": "Tecnología",
+    "precio": 0,
+    "descripcion": "Casio fx-991 en perfecto estado. Busco Física Universitaria (Sears).",
+    "puntoEntrega": "Plazoleta",
+    "vendedor": "Camila Torres",
+    "contacto": "ctorres@unal.edu.co",
+    "estado": "aprobado",
+    "fecha": "2026-11-03T10:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "nombre": "Diseño de logos para emprendimientos",
+    "tipo": "servicio",
+    "categoria": "Servicios",
+    "precio": 40000,
+    "descripcion": "Logo + paleta de colores. Entrega en 3 días.",
+    "puntoEntrega": "Biblioteca",
+    "vendedor": "Andrés Gómez",
+    "contacto": "agomez@unal.edu.co",
+    "estado": "aprobado",
+    "fecha": "2026-11-04T10:00:00.000Z"
+  }
+]

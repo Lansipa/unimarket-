@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNiMarket | Marketplace del campus</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ========== BARRA DE NAVEGACIÓN ========== -->
+  <header class="barra">
+    <div class="contenedor barra-interna">
+      <a href="#inicio" class="logo">UNi<span>Market</span></a>
+      <nav class="barra-botones">
+        <a href="#catalogo" class="enlace">Catálogo</a>
+        <a href="#contacto" class="enlace">Contacto</a>
+        <button class="boton boton-claro" id="btnAbrirLogin">Admin</button>
+        <button class="boton boton-verde" id="btnAbrirPublicar">Publicar</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== 1. MARCA + HOME ========== -->
+  <section class="hero" id="inicio">
+    <div class="contenedor">
+      <h1>Compra, vende e intercambia dentro del campus</h1>
+      <p>El marketplace de los estudiantes de la Universidad Nacional, sede Medellín.
+         Entregas en puntos de encuentro del campus.</p>
+      <div class="hero-botones">
+        <a href="#catalogo" class="boton boton-verde">Explorar catálogo</a>
+        <button class="boton boton-borde" id="btnHeroPublicar">Publicar un artículo</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ========== 2. CATÁLOGO ========== -->
+    <section class="seccion contenedor" id="catalogo">
+      <h2>Artículos disponibles</h2>
+      <p class="subtitulo">Productos y servicios publicados por estudiantes.</p>
+
+      <div class="filtros">
+        <input type="search" id="buscar" placeholder="Buscar por nombre o categoría...">
+        <select id="filtroTipo">
+          <option value="">Todo</option>
+          <option value="venta">Venta</option>
+          <option value="intercambio">Intercambio</option>
+          <option value="servicio">Servicio</option>
+        </select>
+      </div>
+
+      <!-- Aquí mostramos: cargando, error, vacío o las tarjetas -->
+      <p id="estadoCatalogo" class="estado"></p>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <!-- ========== 4. PANEL DE ADMINISTRADOR (oculto hasta iniciar sesión) ========== -->
+    <section class="seccion contenedor oculto" id="panelAdmin">
+      <div class="admin-cabecera">
+        <h2>Panel de administrador</h2>
+        <button class="boton boton-claro" id="btnSalir">Cerrar sesión</button>
+      </div>
+
+      <h3>Productos (aprueba los pendientes)</h3>
+      <div id="adminProductos" class="lista-admin"></div>
+
+      <h3>Mensajes recibidos</h3>
+      <div id="adminMensajes" class="lista-admin"></div>
+    </section>
+
+    <!-- ========== 3. CONTACTO REAL ========== -->
+    <section class="seccion seccion-oscura" id="contacto">
+      <div class="contenedor contacto-caja">
+        <h2>Contacto</h2>
+        <p class="subtitulo">¿Dudas o sugerencias? Escríbenos.</p>
+        <form id="formContacto" class="formulario">
+          <input type="text" id="cNombre" placeholder="Nombre completo" required>
+          <input type="email" id="cCorreo" placeholder="Correo" required>
+          <input type="text" id="cAsunto" placeholder="Asunto" required>
+          <textarea id="cMensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+          <button type="submit" class="boton boton-verde" id="btnContacto">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">UNiMarket · Proyecto final Jóvenes creaTIvos 2026</footer>
+
+  <!-- ========== VENTANA: PUBLICAR ========== -->
+  <dialog id="dlgPublicar">
+    <div class="dialogo-cabecera">
+      <h2>Publicar artículo</h2>
+      <button class="cerrar" data-cerrar="dlgPublicar" aria-label="Cerrar">✕</button>
+    </div>
+    <form id="formPublicar" class="formulario">
+      <input type="text" id="pNombre" placeholder="Nombre del artículo o servicio" required>
+      <select id="pTipo">
+        <option value="venta">Venta</option>
+        <option value="intercambio">Intercambio</option>
+        <option value="servicio">Servicio</option>
+      </select>
+      <select id="pCategoria">
+        <option>Snacks</option><option>Libros</option><option>Tecnología</option>
+        <option>Ropa</option><option>Servicios</option>
+      </select>
+      <input type="number" id="pPrecio" placeholder="Precio en COP (0 si es intercambio)" min="0">
+      <select id="pPunto">
+        <option>Biblioteca</option><option>Cafetería</option>
+        <option>Plazoleta</option><option>Bloque de aulas</option>
+      </select>
+      <textarea id="pDescripcion" rows="3" placeholder="Descripción" required></textarea>
+      <input type="text" id="pVendedor" placeholder="Tu nombre" required>
+      <input type="email" id="pContacto" placeholder="Tu correo @unal.edu.co" required>
+      <p class="ayuda">El administrador revisará tu publicación antes de mostrarla.</p>
+      <button type="submit" class="boton boton-verde" id="btnPublicar">Publicar</button>
+    </form>
+  </dialog>
+
+  <!-- ========== VENTANA: LOGIN ADMIN ========== -->
+  <dialog id="dlgLogin">
+    <div class="dialogo-cabecera">
+      <h2>Acceso administrador</h2>
+      <button class="cerrar" data-cerrar="dlgLogin" aria-label="Cerrar">✕</button>
+    </div>
+    <form id="formLogin" class="formulario">
+      <input type="text" id="lUsuario" placeholder="Usuario" required>
+      <input type="password" id="lClave" placeholder="Contraseña" required>
+      <p class="ayuda" id="errorLogin"></p>
+      <button type="submit" class="boton boton-verde" id="btnLogin">Entrar</button>
+    </form>
+  </dialog>
+
+  <!-- ========== 5. IA: CHATBOT UNiBot ========== -->
+  <div class="chat">
+    <button class="chat-boton" id="btnChat" aria-label="Abrir asistente">💬</button>
+    <div class="chat-ventana oculto" id="chatVentana">
+      <div class="chat-cabecera">UNiBot · asistente del campus</div>
+      <div class="chat-mensajes" id="chatMensajes">
+        <div class="burbuja bot">¡Hola! Soy UNiBot. Pregúntame por productos o cómo vender en el campus. 🎓</div>
+      </div>
+      <form id="formChat" class="chat-form">
+        <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." autocomplete="off">
+        <button type="submit" class="boton boton-verde">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Aviso emergente (reemplaza a los alert) -->
+  <div id="aviso" class="aviso oculto"></div>
+
+  <!-- Scripts: el orden importa (api.js primero porque los demás lo usan) -->
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
